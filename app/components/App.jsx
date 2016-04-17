@@ -1,10 +1,12 @@
 import React from 'react';
 import AltContainer from 'alt-container';
-
 import Lanes from './Lanes.jsx';
 import LaneActions from '../actions/LaneActions.js';
 import LaneStore from '../stores/LaneStore.js';
+import {DragDropContext} from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
+@DragDropContext(HTML5Backend)
 export default class App extends React.Component {
   render() {
 
@@ -21,7 +23,7 @@ export default class App extends React.Component {
           <Lanes />
         </AltContainer>
       </div>
-    )
+    );
   }
 
   addLane = () => {
